@@ -11,6 +11,7 @@ import { ItemService } from '../item.service';
 export class ItemComponent implements OnInit {
   displayedColumns: string[] = ['saleText', 'idLength', 'idWidth', 'idHeight', 'fgSheetLength', 'fgSheetWidth'];
   items: Item[];
+  showLoader = true;
 
   constructor(private itemService: ItemService) { }
 
@@ -20,7 +21,7 @@ export class ItemComponent implements OnInit {
 
   getItems() {
     this.itemService.getItem()
-      .subscribe(items => this.items = items);
+      .subscribe(items => { this.items = items; this.showLoader = false; });
   }
 
 }

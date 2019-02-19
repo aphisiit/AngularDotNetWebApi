@@ -1,7 +1,8 @@
-<p>
-  item works!
-</p>
-<div>
+<h2>Item List</h2>
+<div *ngIf="showLoader" style="width: 100%; padding-left: 45%; padding-top: 100px;">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!showLoader">
   <table mat-table [dataSource]="items" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
