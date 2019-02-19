@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
-
+import { catchError, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
-
 import { Hero } from './hero';
 import { MessageService } from './message.service';
+import { environment } from '../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class HeroService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
-  private heroesUrl = 'http://localhost:65262/api/hero';
+  private heroesUrl = environment.baseURL.concat('/hero');
 
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);

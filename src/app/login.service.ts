@@ -3,13 +3,14 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import { NgForm } from '@angular/forms';
 import {catchError} from 'rxjs/operators';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private authenUrl = 'http://localhost:65262/api/auth/login';
+  private authenUrl = environment.baseURL.concat('/auth/login');
   constructor(private http: HttpClient) {}
 
   /**

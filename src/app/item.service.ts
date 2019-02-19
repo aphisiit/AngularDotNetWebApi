@@ -3,8 +3,8 @@ import { Item } from './item';
 import {HttpClient} from '@angular/common/http';
 import {MessageService} from './message.service';
 import {Observable, of} from 'rxjs';
-import {Hero} from './hero';
 import {catchError} from 'rxjs/operators';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class ItemService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
-  private itemUrl = 'http://localhost:65262/api/item';
+  private itemUrl = environment.baseURL.concat('/item');
 
   /**
    * Handle Http operation that failed.
