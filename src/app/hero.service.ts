@@ -5,7 +5,6 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
 import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
 import { MessageService } from './message.service';
 
 @Injectable({ providedIn: 'root' })
@@ -13,7 +12,7 @@ export class HeroService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
-  private heroesUrl = 'https://localhost:44320/api/hero';
+  private heroesUrl = 'http://localhost:65262/api/hero';
 
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
