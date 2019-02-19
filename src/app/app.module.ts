@@ -20,6 +20,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { ItemComponent } from './item/item.component';
 import { LoginComponent, DialogAlertLogin } from './login/login.component';
@@ -50,7 +51,8 @@ import { LoginComponent, DialogAlertLogin } from './login/login.component';
     MatTabsModule,
     MatListModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
   entryComponents: [LoginComponent, DialogAlertLogin],
   providers: [],
