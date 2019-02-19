@@ -1,0 +1,51 @@
+<p>
+  item works!
+</p>
+<div>
+  <table mat-table [dataSource]="items" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- SaleText Column -->
+    <ng-container matColumnDef="saleText">
+      <th mat-header-cell *matHeaderCellDef> SaleText </th>
+      <td mat-cell *matCellDef="let element"> {{element.saleText}} </td>
+    </ng-container>
+
+    <!-- IdLength Column -->
+    <ng-container matColumnDef="idLength">
+      <th mat-header-cell *matHeaderCellDef> IdLength </th>
+      <td mat-cell *matCellDef="let element"> {{element.idLength}} </td>
+    </ng-container>
+
+    <!-- IdWidth Column -->
+    <ng-container matColumnDef="idWidth">
+      <th mat-header-cell *matHeaderCellDef> IdWidth </th>
+      <td mat-cell *matCellDef="let element"> {{element.idWidth}} </td>
+    </ng-container>
+
+    <!-- IdHeight Column -->
+    <ng-container matColumnDef="idHeight">
+      <th mat-header-cell *matHeaderCellDef> IdHeight </th>
+      <td mat-cell *matCellDef="let element"> {{element.idHeight}} </td>
+    </ng-container>
+
+    <!-- FgSheetLength Column -->
+    <ng-container matColumnDef="fgSheetLength">
+      <th mat-header-cell *matHeaderCellDef> FgSheetLength </th>
+      <td mat-cell *matCellDef="let element"> {{element.fgSheetLength}} </td>
+    </ng-container>
+
+    <!-- FgSheetWidth Column -->
+    <ng-container matColumnDef="fgSheetWidth">
+      <th mat-header-cell *matHeaderCellDef> FgSheetWidth </th>
+      <td mat-cell *matCellDef="let element"> {{element.fgSheetWidth}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+</div>
