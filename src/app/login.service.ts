@@ -3,7 +3,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import { NgForm } from '@angular/forms';
 import {catchError} from 'rxjs/operators';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +42,7 @@ export class LoginService {
       }),
       observe: 'response',
     }).pipe(
-      catchError(this.handleError('getHeroes', []))
+      catchError(this.handleError('logIn', []))
     );
   }
 
