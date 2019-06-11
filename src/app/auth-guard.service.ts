@@ -17,6 +17,7 @@ export class AuthGuardService implements CanActivate {
     if (token && !this.jwtHelper.isTokenExpired(token)) {
       return true;
     }
+    alert('Session Time Out');
     this.router.navigate(['login']);
     return false;
   }
